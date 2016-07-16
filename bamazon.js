@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "127.0.0.1",
     port: 3306,
     user: "root", //Your username
-    password: "x007sa#9ketiSh0MFbG$idgaf", //Your password
+    password: , //Your password
     database: "Bamazon"
 })
 
@@ -57,7 +57,6 @@ function placeOrder() {
                 if (res[0].stock < quantity) {
                     console.log("We don't have that much in stock");
                     displayProducts();
-                    placeOrder();
                 } else {
                     // If your store DOES have enough of the product to meet the customer's request, you should fulfill their order. This means that you should show them the total cost of their puchase. Then update the SQL database to reflect the remaining quantity.
 

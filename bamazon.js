@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "127.0.0.1",
     port: 3306,
     user: "root", //Your username
-    password: , //Your password
+    password: "x007sa#9ketiSh0MFbG$idgaf", //Your password
     database: "Bamazon"
 })
 
@@ -60,7 +60,7 @@ function placeOrder() {
                     placeOrder();
                 } else {
                     // If your store DOES have enough of the product to meet the customer's request, you should fulfill their order. This means that you should show them the total cost of their puchase. Then update the SQL database to reflect the remaining quantity.
-                    
+
                     var new_quantity = res[0].stock - quantity;
                     connection.query('UPDATE products SET ? WHERE ?', 
                         [{stock: new_quantity},{id: selection}], 
@@ -76,13 +76,6 @@ function placeOrder() {
                     displayProducts();
                 }
             });
-            
-            // for (var i = 0;i < res.length; i++) {
-            //     if (res[i].id == input.choice) {
-            //         var chosenProduct = res[i];
-                    
-            //     }
-            // }
             
         })
 }; 
